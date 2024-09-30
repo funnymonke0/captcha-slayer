@@ -9,7 +9,7 @@ img_size = (160, 60)
 batch_size = 16
 epochs = 10
 
-dataset = '62_dataset'
+dataset = 'general_dataset'
 train_dir = os.path.join(dataset, 'train')
 valid_dir = os.path.join(dataset, 'validation')
 
@@ -40,6 +40,6 @@ x_valid, y_valid = shuffle(x_valid, y_valid, random_state=42)
 
 
 
-model = load_model('vgg_like_v4.keras')
-model.evaluate(x_valid, y_valid, batch_size=batch_size)
+model = load_model('captchaslayer_v2.1.h5')
+
 

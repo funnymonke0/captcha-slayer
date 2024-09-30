@@ -2,7 +2,7 @@ from captcha.image import ImageCaptcha
 import random
 import os
 import string
-image = ImageCaptcha(width = 128, height = 32)
+image = ImageCaptcha()
 char_list = list(string.ascii_letters + string.digits)
 
 def rand_letter(size):
