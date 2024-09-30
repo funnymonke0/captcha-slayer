@@ -11,15 +11,17 @@ def rand_letter(size):
         image.write(name, name+'.png')
         print(f'{round((i/size)*100)}% done', end= '\r')
     
-
+def new_dir(name, entries):
+    os.mkdir(name)
+    os.chdir(name)
+    rand_letter(entries)
+    os.chdir('..')
 
 os.mkdir('general_dataset')
-os.chdir('general_dataset')
-os.mkdir('train')
-os.chdir('train')
-rand_letter(20000)
-os.chdir('..')
-os.mkdir('validation')
-os.chdir('validation')
-rand_letter(5000)
-os.chdir('..')
+
+new_dir('train', 20000)
+
+new_dir('validation', 5000)
+
+new_dir('test', 2500)
+
