@@ -1,2 +1,1 @@
-C:/Users/slice/Downloads/general_dataset.zip filter=lfs diff=lfs merge=lfs -text
-general_dataset.zip filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
