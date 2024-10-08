@@ -1,11 +1,13 @@
-extract dataset from zip before using
-
 i made a neural network to identify captchas
 
-its not that good
+it took way too long
 
-i made the nn architecture on my own tho
+decent accuracy? idk man, just look at the results or smth
 
-dataset is generated, see captchagen.py
+i made the nn architecture on my own. its very scuffed and probably not the best. I did all the calculations in a spreadsheet 😭
 
-very unoptimized, so expect training to be slow if you are checking out the main program
+dataset is generated, see captchagen.py.
+
+very unoptimized, so expect training to be slow if you are checking out the main program 😭💀
+
+extract dataset from zip before using
