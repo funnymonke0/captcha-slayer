@@ -121,6 +121,7 @@ class CaptchaSlayer2():
 
                     images.append(img)
                     labels.append(self.convert(txt))
+
             except Exception as s:
                 print(f'Failed to load data: {s} \n you may need to unzip dataset.')
 
@@ -146,8 +147,10 @@ class CaptchaSlayer2():
         self.x_valid = np.array(self.valid_images)
         self.y_valid = np.array(self.valid_labels)
 
+
         self.x_test = np.array(self.test_images)
         self.y_test = np.array(self.test_labels)
+
 
         
 
@@ -274,7 +277,6 @@ class CaptchaSlayer2():
                     answer = self.decode(y_set[index])
                     pred = [j for i, j in enumerate(pred) if j != -1]
                     pred = self.decode(pred)
-
                     if pred == answer:
                         correct+=1
                         flag = True
@@ -284,34 +286,27 @@ class CaptchaSlayer2():
             except Exception as s:
                 print(f'Exception while getting model predictions: {s}')
 
-    def validate(self):
-
+    def validate(self, args):
+        x_set, y_set = args
         
-
 
         try:
             model = load_model(self.save_path, custom_objects={'ctc_loss': self.ctc_loss})
         except Exception as s:
             print(f'Failed to load model: {s}')
         try:
-            score = model.evaluate(self.x_test, self.y_test, verbose = 0)
+            score = model.evaluate(x_set, y_set, verbose = 0)
             print(f'loss: {score}')
         except Exception as s:
             print(f'Exception during evaluation: {s}')
             
         
-            
-            
-
-           
-        
-        
         try:
-            correct, answers = self.check((self.x_test, self.y_test, model))
+            correct, answers = self.check((x_set, y_set, model))
 
             
-            print(f"{correct}/{len(self.y_test)} correct")
-            accuracy = round(100*(correct/len(self.y_test)), 2)
+            print(f"{correct}/{len(x_set)} correct")
+            accuracy = round(100*(correct/len(y_set)), 2)
             print(f"{str(accuracy)}% accuracy")
 
             row = 8
@@ -351,7 +346,7 @@ model.summary()
 model.preprocess()
 
 model.train()
-model.validate()
+model.validate((model.x_test, model.y_test))
 
 
 
