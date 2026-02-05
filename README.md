@@ -54,6 +54,7 @@ Performance benchmarks and accuracy metrics can be found in the `/results` folde
 - Expand support for different CAPTCHA types
 - Optimize model architecture for better accuracy
 - Add real-time inference capabilities
+- clean up dependencies and document them
 
 ---
 
