@@ -56,6 +56,9 @@ Performance benchmarks and accuracy metrics can be found in the `/results` folde
 - Add real-time inference capabilities
 - clean up dependencies and document them
 
+##Results!
+![Benchmark Results](results/results.png)
+![Training_Graph](results/training_graph.png)
 ---
 
 *Note: This project is for educational purposes only.*
