@@ -62,8 +62,8 @@ Performance benchmarks and accuracy metrics can be found in the `/results` folde
 <details>
 <summary>Click to view performance metrics and examples</summary>
 
-![Benchmark Results](results/results.png)
-![Training_Graph](results/training_graph.png)
+![Benchmark Results](Results/results.png)
+![Training_Graph](Results/training_graph.png)
 ---
 
 *Note: This project is for educational purposes only.*
