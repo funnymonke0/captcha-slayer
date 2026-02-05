@@ -111,6 +111,7 @@ class CaptchaSlayer2():
                     img = cv2.imread(impath)
 
                     disp_images.append(img)
+                    
 
                     img = cv2.resize(img, dsize=self.img_size, interpolation = cv2.INTER_AREA) #INTER_CUBIC is better unless shrinking image
                     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -121,6 +122,7 @@ class CaptchaSlayer2():
 
                     images.append(img)
                     labels.append(self.convert(txt))
+                    
 
             except Exception as s:
                 print(f'Failed to load data: {s} \n you may need to unzip dataset.')
@@ -150,7 +152,7 @@ class CaptchaSlayer2():
 
         self.x_test = np.array(self.test_images)
         self.y_test = np.array(self.test_labels)
-
+        print(self.test_labels)
 
         
 
@@ -340,12 +342,12 @@ class CaptchaSlayer2():
 
 
 
-model = CaptchaSlayer2('general_dataset', 'captchaslayer_v2.1.h5')
+model = CaptchaSlayer2('general_dataset', 'captchaslayer_v2.2.h5')
 
 model.summary()
 model.preprocess()
 
-model.train()
+# model.train()
 model.validate((model.x_test, model.y_test))
 
 
