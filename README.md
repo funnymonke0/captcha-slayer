@@ -12,6 +12,8 @@ This project implements a convolutional neural network to automatically solve im
 - Custom CNN designed specifically for CAPTCHA character recognition
 - Built using Keras/TensorFlow
 - Trained on synthetically generated CAPTCHA dataset
+- [View the full data table here](/CaptchaSlayer-base.csv)
+- [View the google sheets here (calculations)](https://docs.google.com/spreadsheets/d/e/2PACX-1vTp6OgSoT5ML6a_sfI2lCpMmkueIl8r5ZKvutVT_T6XzKxZeOjPm004m7fAQVqYKJ8xGRBJ1bPmZeWM/pubhtml)
 
 **Data Pipeline:**
 - Custom dataset generator for efficient training
@@ -26,8 +28,8 @@ This project implements a convolutional neural network to automatically solve im
 ## Tech Stack
 
 - **Framework:** Keras/TensorFlow
-- **Image Processing:** PIL/OpenCV (grayscale preprocessing)
-- **Dataset Generation:** [captcha library name if you remember it]
+- **Image Processing:** OpenCV (grayscale preprocessing)
+- **Dataset Generation:** [captcha](https://pypi.org/project/captcha/)
 
 ## Project Structure
 ```
