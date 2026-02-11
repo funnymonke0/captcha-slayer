@@ -1,0 +1,33 @@
+Name,Shape,,,filters (is not operated on)
+input_1 (InputLayer),None,32,128,1
+conv2d (Conv2D) padding=same,None,32,128,64
+batch_normalization (Batch Normalization),None,32,128,64
+conv2d (Conv2D) padding=same,None,32,128,64
+batch_normalization (Batch Normalization),None,32,128,64
+max_pooling2d (MaxPooling2D) pool=(2x2) strides = 2,None,16,64,64
+,,,,
+conv2d (Conv2D) padding=same,None,16,64,128
+batch_normalization (Batch Normalization),None,16,64,128
+conv2d (Conv2D) padding=same,None,16,64,128
+batch_normalization (Batch Normalization),None,16,64,128
+max_pooling2d (MaxPooling2D)  pool=(2x2) strides = 2,None,8,32,128
+,,,,
+conv2d (Conv2D) padding=same,None,8,32,256
+batch_normalization (Batch Normalization),None,8,32,256
+conv2d (Conv2D) padding=same,None,8,32,256
+batch_normalization (Batch Normalization),None,8,32,256
+"max_pooling2d (MaxPooling2D) pool = (2x1), strides = 0",None,4,32,256
+,,,,
+conv2d (Conv2D) padding=same,None,4,32,512
+batch_normalization (Batch Normalization),None,4,32,512
+conv2d (Conv2D) padding=same,None,4,32,512
+batch_normalization (Batch Normalization),None,4,32,512
+"max_pooling2d (MaxPooling2D) pool = (2x1), strides = 0",None,2,32,512
+,,,,
+,,,,
+conv2d (Conv2D),None,1,31,512
+squeeze,None,0,31,512
+,,,,
+blstm1,None,0,31,512
+blstm2,None,0,31,512
+Dense,None,0,31,63
